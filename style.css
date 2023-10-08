@@ -1,5 +1,7 @@
 /* Modified Styles */
 .dropdown {
+  margin-left: 50px;
+  margin-top: 25px;
   position: fixed; /* Changed from relative */
   top: 0;
   left: 0;
