@@ -10,6 +10,11 @@
   transition: 0.5s;
 }
 
+div#timeDropdown::-webkit-scrollbar,
+div#dropdownContent::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
 .dropdown-content {
   width: 0%;
   height: 100%; /* Full height */
