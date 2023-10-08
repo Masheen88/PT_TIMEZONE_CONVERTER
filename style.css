@@ -150,3 +150,51 @@ body {
     box-shadow: 0 0 10px rgb(227, 227, 12);
   }
 }
+
+#tooltip.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+#tooltip.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Existing styles remain the same */
+/* Media query for screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  .dropdown {
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 90%; /* Full width */
+    position: fixed; /* Fixed position */
+    top: 33%; /* Place the dropdown content 33% from the top */
+    bottom: 0; /* Align to the bottom */
+    z-index: 2; /* Raise above other content */
+  }
+
+  /* Adjust dropdown size */
+  .show-sidebar {
+    width: 95%; /* Full width on small screen */
+  }
+
+  /* Adjust button grid to 3 columns and 2 rows */
+  #selectTimeZoneButton,
+  #listOfTimes {
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columns */
+    grid-template-rows: 1fr 1fr; /* 2 rows */
+  }
+
+  /* Adjust divider width */
+  #convertedTimeDivider {
+    width: 100%;
+  }
+
+  /* Adjust font sizes, padding, etc. */
+  body {
+    font-size: 16px;
+  }
+}

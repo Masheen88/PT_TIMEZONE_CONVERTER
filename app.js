@@ -28,7 +28,7 @@ function populateDropdown() {
     // dropdownContent.appendChild(btn);
     const listOfTimes = document.getElementById("listOfTimes");
     listOfTimes.appendChild(btn);
-    console.log(dropdownContent);
+    // console.log(dropdownContent);
   }
 }
 
@@ -178,6 +178,7 @@ function convertTime() {
 function onLoadActions() {
   setDefaultTime();
   populateDropdown();
+  copyTimeToClipboard();
 }
 
 function updateClock() {
@@ -196,6 +197,32 @@ function updateClock() {
   document.getElementById(
     "clock"
   ).innerText = `${timeString} ${defaultTimeZone}`;
+}
+
+function copyTimeToClipboard() {
+  //Copy the text inside <p id="output"></p> to clipboard when clicking on id: output and display a helper message when successful
+  //The tooltip should be a popup that disappears after 2 seconds
+
+  const copyText = document.getElementById("output");
+  copyText.addEventListener("click", function () {
+    const textArea = document.createElement("textarea");
+    textArea.value = copyText.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    textArea.remove();
+    /*
+   <div id="tooltip" class="hidden">
+      <div id="tooltipText"></div>
+*/
+    const tooltip = document.getElementById("tooltip");
+    tooltip.classList.remove("hidden");
+    tooltip.classList.add("show");
+    setTimeout(function () {
+      tooltip.classList.remove("show");
+      tooltip.classList.add("hidden");
+    }, 1000);
+  });
 }
 
 // Initialize the clock and set interval to update every second

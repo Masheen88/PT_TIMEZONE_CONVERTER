@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Time Zone Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
@@ -38,6 +39,10 @@
     </div>
     <hr id="convertedTimeDivider" />
     <h2>Converted Times</h2>
+    <!-- tooltip popup modal -->
+    <div id="tooltip" class="hidden">
+      <div id="tooltipText">Copied to clipboard!!!</div>
+    </div>
     <p id="output"></p>
 
     <script src="app.js"></script>
