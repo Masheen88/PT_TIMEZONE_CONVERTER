@@ -66,6 +66,10 @@ body {
   color: white;
 }
 
+#convertedTimeDivider {
+  width: 30%;
+}
+
 #selectTimeButton {
   background-color: rgb(36, 55, 63);
   color: white;
