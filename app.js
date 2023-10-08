@@ -119,10 +119,14 @@ function convertTime() {
 
   // Time zone offsets in hours
   const zoneOffsets = {
+    // eastern time zone
     et: 0,
-    ct: -1,
-    mt: -2,
-    pt: -3,
+    // central time zone
+    ct: 1,
+    // mountain time zone
+    mt: 2,
+    // pacific time zone
+    pt: 3,
   };
 
   // Time zone labels
