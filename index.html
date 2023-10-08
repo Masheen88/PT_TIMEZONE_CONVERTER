@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Time Zone Converter</title>
+  </head>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <body class="dark-mode">
+    <h1>Time Zone Converter</h1>
+    <h2>Current Time Selected</h2>
+    <div id="clock"></div>
+    <div class="dropdown" id="timeDropdown">
+      <button id="selectTimeButton" onclick="toggleDropdown()">
+        Select Time
+      </button>
+      <div class="dropdown-content" id="dropdownContent" tabindex="-1">
+        <!-- Divider to separate times and time zones -->
+        <hr />
+
+        <!-- Buttons for selecting time zones -->
+        Time Zones
+        <div id="selectTimeZoneButton">
+          <!-- Note: I've changed container to div -->
+          <button onclick="setTimeZone('et')">ET</button>
+          <button onclick="setTimeZone('ct')">CT</button>
+          <button onclick="setTimeZone('mt')">MT</button>
+          <button onclick="setTimeZone('pt')">PT</button>
+        </div>
+
+        <!-- Hidden inputs to hold the selected time and time zone -->
+        <input type="hidden" id="time" />
+        <input type="hidden" id="timeZone" value="ct" />
+        <!-- Default value set to Central Time -->
+        <br />
+        Times (Hours)
+        <div id="listOfTimes"></div>
+      </div>
+    </div>
+
+    <h2>Converted Times</h2>
+    <p id="output"></p>
+
+    <script src="app.js"></script>
+  </body>
+</html>

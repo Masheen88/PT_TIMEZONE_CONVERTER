@@ -1,0 +1,141 @@
+/* Modified Styles */
+.dropdown {
+  position: fixed; /* Changed from relative */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100px; /* Initially hidden */
+  overflow-x: hidden;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.dropdown-content {
+  width: 0%;
+  height: 100%; /* Full height */
+  position: relative; /* Changed from absolute */
+  background-color: #f9f9f9;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+/* New Class */
+.show-sidebar {
+  width: 300px; /* Width of sidebar */
+}
+/* Modified Styles - End */
+
+/* display dropdown-content show-sidebar in a 2x2 grid */
+#selectTimeZoneButton,
+#listOfTimes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.dropdown-content button {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  border: none;
+  display: block;
+}
+
+/* Style for the divider line between time and time zones */
+.dropdown-content hr {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+/* center the body */
+body {
+  text-align: center;
+}
+
+/* darkmode */
+.dark-mode {
+  background-color: rgb(57, 57, 57);
+  color: white;
+}
+
+#selectTimeButton {
+  background-color: rgb(36, 55, 63);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.358);
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#selectTimeZoneButton button {
+  background-color: rgb(36, 55, 63);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.358);
+  width: 100%;
+  padding: 10px;
+  /* text-align: left; */
+  /* display: block; */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#selectTimeButton:hover,
+#selectTimeZoneButton button:hover {
+  background-color: rgb(77, 77, 77);
+  color: white;
+}
+
+/* New styles for buttons inside dropdown-content in dark mode */
+.dark-mode .dropdown-content button {
+  background-color: rgb(36, 55, 63); /* Same as body background */
+  color: white; /* Text color */
+  border: 1px solid rgba(255, 255, 255, 0.358); /* Optional, if you want a border */
+
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  /* border: none; */
+  display: block;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+/* Hover effect for the buttons in light mode */
+.dropdown-content button:hover {
+  background-color: #ddd; /* Light gray background */
+  color: black; /* Black text */
+}
+
+/* Hover effect for the buttons in dark mode */
+.dark-mode .dropdown-content button:hover {
+  background-color: rgb(
+    77,
+    77,
+    77
+  ); /* Slightly lighter than the dark background */
+  color: white; /* White text */
+}
+
+/* If you also want to update the background of the dropdown-content itself */
+.dark-mode .dropdown-content {
+  background-color: rgb(57, 57, 57);
+}
+
+.highlight {
+  background-color: rgba(255, 255, 255, 0);
+
+  /* fade in  and stay visible*/
+  animation: fadeIn ease 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 1, 0.044);
+  }
+  100% {
+    box-shadow: 0 0 10px rgb(227, 227, 12);
+  }
+}
